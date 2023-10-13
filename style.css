@@ -1,0 +1,128 @@
+* {
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --textcolor: white;
+    --bg-url: url(./assets/bg-desktop.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.10);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --hightligh-color: rgba(255, 255, 255, 0.2);
+    --swtch-bg-url:  url(./assets/moon-stars.svg);
+
+}
+.lighty {
+    --textcolor: black;
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.10);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --hightligh-color: rgba(0, 0, 0, 0.1);
+    --swtch-bg-url:  url(./assets/sun.svg);
+}
+
+body {
+    background-image: var(--bg-url); /* link com img*/
+    background-repeat: no-repeat; /* não repetir a imagem*/
+    background-position: top center; /*Alinhar ao centro e em cima*/
+    background-size: cover; /*Preencher todo espaçamento*/
+}
+body *{
+    font-family: 'Inter', sans-serif; /* Definindo uma fonte padrão para meu body*/
+    color: var(--textcolor);
+}
+
+#container{
+    width: 360px; /* Definindo a largura do meu container central*/
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+#profile{
+    text-align: center; /* Alinhar texto ao meio*/
+    padding: 24px;
+}
+
+#profile img{
+    width: 112px; /* Definindo uma altura para largura de fundo*/
+    display: block; /* display block para bloquear*/
+    margin: auto; /* centralizar a imagem*/
+}
+
+#profile p {
+    font-weight: 500; /* negrito*/
+    line-height: 24px; /* Altura da linha*/
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+
+    margin: 4px auto;
+}
+
+/* Botão */
+#switch button {
+    height: 32px;/*altura*/
+    width: 32px; /*Largura*/
+    background: white var(--swtch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    align-items: center;
+}
+
+/* Links */
+ul {
+    list-style: none; /* Sem estilo nenhum */
+    display: flex;
+    flex-direction: column; /*deixar os elementos em coluna*/
+    gap: 37px; /* Espaçamento entre as colunas*/
+    text-align: center;
+
+    padding: 24px 0;
+}
+/*itens da lista*/
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none; /*tirardecoraçãodotxtolinks*/
+    font-weight: 500;
+    -webkit-transition: background 05.s;
+}
+
+/* pseudo-selector (Quando o mouse passar por cima)*/
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px var(--stroke-color);
+}
+/*Icones*/
+#social-links {
+    display: flex; /* um do lado do outro*/
+    justify-content: center;
+    gap: 32px;
+
+    padding: 24px 0px;
+
+    font-size: 24px;
+}
+/* Roda pé*/
+footer{
+    padding: 24px 0px;
+    text-align: center;
+}
